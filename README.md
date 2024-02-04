@@ -1,4 +1,4 @@
-# web2_course_work_spring24
+# Web and Mobile 2 - Course Work Spring 2024
 
 Week 1 - Done ✅
 
