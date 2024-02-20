@@ -1,10 +1,10 @@
 # Web and Mobile 2 - Course Work Spring 2024
 
-Week 1 - Done ✅
+#### Week 1 - Done ✅
 
-Week 2 - Done ✅
+#### Week 2 - Done ✅
 
-Week 3
+#### Week 3 - Done ✅
 
 Week 4
 
