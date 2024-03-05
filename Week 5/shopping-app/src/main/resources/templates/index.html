@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shopping App Home</title>
+</head>
+<body>
+<h1>Welcome to the Shopping App!</h1>
+<form th:action="@{/greet}" method="post">
+    <input type="text" name="userName" placeholder="Enter your name"/>
+    <button type="submit">Submit</button>
+</form>
+<a href="/products">View Products</a>
+<a href="/orders">View Orders</a>
+</body>
+</html>
