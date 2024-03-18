@@ -12,7 +12,7 @@
 
 #### Week 6 - Done ✅
 
-Week 7
+#### Week 7 - Done ✅
 
 Week 8
 
