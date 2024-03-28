@@ -14,7 +14,7 @@
 
 #### Week 7 - Done ✅
 
-Week 8
+#### Week 8 - Done ✅
 
 Week 9
 
