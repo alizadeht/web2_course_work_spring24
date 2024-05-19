@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    padding-top: 60px; /* Offset for fixed header */
+}
+
+/* Container for centering the content */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav {
+    background-color: #333;
+    overflow: hidden;
+    margin: 20px auto; /*margin to the top and bottom */
+    width: fit-content;
+    border-radius: 20px; /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* shadow for depth */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 15px; /* rounded corners for links */
+}
+
+nav ul li a:hover, nav ul .current {
+    background-color: #4CAF50; /* green on hover and active */
+    border-radius: 15px; /* rounded corners on hover */
+}
+
+
+/* Header */
+header {
+    background: #005792;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: auto;
+    top: 0;
+    z-index: 1000;
+    margin: 0 auto;
+}
+
+header nav {
+    width: auto;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+h2 {
+    color: #005792; /* dark blue color to match header */
+    padding-bottom: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form input[type="submit"] {
+    background-color: #005792;
+    color: white;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #003d5b; /* darker blue on hover */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+table thead th {
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+/* Pagination styles */
+.pagination {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination li {
+    display: inline;
+}
+
+.pagination a {
+    color: #005792;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 10px;
+    width: 75px;
+}
+
+.pagination a:hover,
+.pagination .current a {
+    background-color: #005792;
+    color: white;
+    border-color: #005792;
+}
+
+/* Button styles */
+.button-1 {
+    display: block;
+    width: 200px;
+    background-color: red; /* red color for the button */
+    padding: 15px;
+    text-align: center;;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 30px auto; /* center the button */
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.6s, color 0.6s; /* a little bit transition to visualise button better */
+}
+.button-1 a {
+    text-decoration: none; /* removing underline in the text */
+}
+
+
+.button-1:hover {
+    background-color: green; /* dark Green on hover */
+    color: white;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container, header nav {
+        width: 95%;
+    }
+
+    header nav li, .pagination li {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    header nav, form, .pagination, .button-1 {
+        text-align: center;
+    }
+
+    form input[type="text"] {
+        width: 80%; /* text fields wider on mobile */
+        margin: 10px 0; /* adding space between fields */
+    }
+
+    form input[type="submit"] {
+        width: 50%; /* the submit button wider */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Course</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/courseeditform.css}" />
+</head>
+<body>
+<div class="container">
+  <h1>Edit Course</h1>
+  <form th:action="@{/courses/update/{id}(id=${course.id})}" th:object="${course}" method="post">
+
+  <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" th:field="*{name}" class="form-control"/>
+      <div th:if="${#fields.hasErrors('name')}" class="alert alert-danger">
+        <p th:errors="*{name}">Name Error</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" th:field="*{description}" class="form-control"></textarea>
+      <div th:if="${#fields.hasErrors('description')}" class="alert alert-danger">
+        <p th:errors="*{description}">Description Error</p>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+</body>
+</html>

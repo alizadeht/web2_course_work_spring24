@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+<h2>Courses</h2>
+<nav>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li class="current"><a th:href="@{/courses}">Courses</a></li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+    </ul>
+</nav>
+<div>
+    <form th:action="@{/courses}" method="get">
+        Course ID: <input type="text" name="idFilter" />
+        Course Name: <input type="text" name="nameFilter" />
+        <input type="submit" value="Filter" />
+    </form>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th><a th:href="@{/courses(sort='id,asc')}">Course ID &#9650;</a> | <a th:href="@{/courses(sort='id,desc')}">&#9660;</a></th>
+        <th><a th:href="@{/courses(sort='name,asc')}">Course Name &#9650;</a> | <a th:href="@{/courses(sort='name,desc')}">&#9660;</a></th>
+        <th>Course Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${coursesPage.content}">
+        <td th:text="${course.id}"></td>
+        <td th:text="${course.name}"></td>
+        <td th:text="${course.description}"></td>
+        <td>
+            <a th:href="@{/courses/edit/{id}(id=${course.id})}">Edit</a> |
+            <a th:href="@{/courses/delete/{id}(id=${course.id})}" th:onclick="'return confirm(\'Are you sure you want to delete this course?\');'">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div th:if="${coursesPage.content.empty}">
+    <p>No courses found.</p>
+</div>
+<div>
+    <ul class="pagination">
+        <!-- First page link -->
+        <li th:classappend="${coursesPage.first} ? 'disabled' : ''">
+            <a th:href="${coursesPage.first} ? '#' : @{/courses(page=0, size=${coursesPage.size})}" aria-label="First">
+                <span aria-hidden="true">&laquo; First</span>
+            </a>
+        </li>
+
+        <!-- Previous page link -->
+        <li th:classappend="${coursesPage.hasPrevious} ? '' : 'disabled'">
+            <a th:href="${coursesPage.hasPrevious} ? @{/courses(page=${coursesPage.number - 1}, size=${coursesPage.size})} : '#'" aria-label="Previous">
+                <span aria-hidden="true">&lsaquo; Previous</span>
+            </a>
+        </li>
+
+        <!-- Display current page number and total pages -->
+        <li>
+            <span>Page <span th:text="${coursesPage.number + 1}"></span> of <span th:text="${coursesPage.totalPages}"></span></span>
+        </li>
+
+        <!-- Next page link -->
+        <li th:classappend="${coursesPage.hasNext} ? '' : 'disabled'">
+            <a th:href="${coursesPage.hasNext} ? @{/courses(page=${coursesPage.number + 1}, size=${coursesPage.size})} : '#'" aria-label="Next">
+                <span aria-hidden="true">Next &rsaquo;</span>
+            </a>
+        </li>
+
+        <!-- Last page link -->
+        <li th:classappend="${coursesPage.last} ? 'disabled' : ''">
+            <a th:href="${coursesPage.last} ? '#' : @{/courses(page=${coursesPage.totalPages - 1}, size=${coursesPage.size})}" aria-label="Last">
+                <span aria-hidden="true">Last &raquo;</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<button  class="button-1" role="button">
+    <a th:href="@{/courses/new}">Add New Course</a>
+</button>
+</body>
+</html>

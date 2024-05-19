@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Assignment 2</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/indexstyle.css}" />
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">Assignment 1 CRUD Application </span> </h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="current"><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/courses}">Courses</a></li>
+                <li><a th:href="@{/login}">Login</a></li>
+                <li><a th:href="@{/signup}">Sign Up</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <section id="showcase">
+        <h1>Welcome to Course-Student Management System</h1>
+        <p>Your all-in-one platform for managing courses and students efficiently.</p>
+        <h2>Author: Tural Alizada</h2>
+        <h2>GitHub: <a class= "github-link" href="https://github.com/alizadeht">alizadeht</a></h2>
+        <h2>Repository: <a class= "github-link" href="https://github.com/SITE-ADA/as1-spring-boot-jpa-app-alizadeht">Click here</a></h2>
+    </section>
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Easy-to-navigate course listings</li>
+            <li>Easy to access student details</li>
+            <li>Quick student enrolment process to courses</li>
+            <li>New features - Soon.....</li>
+        </ul>
+    </section>
+</div>
+
+
+</body>
+</html>
